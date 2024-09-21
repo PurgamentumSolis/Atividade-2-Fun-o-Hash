@@ -59,10 +59,12 @@ for item in frases_e_hashes:
     MD5_calculado = hashlib.md5(frase.encode('utf-8')).hexdigest()
 
     print(f"Frase: \"{frase}\"")
+    print()
     print(f"SHA256 fornecido: {item['SHA256_fornecido']}")
     print(f"SHA256 calculado: {SHA256_calculado}")
+    print("SHA256 correto?" , SHA256_calculado == item["SHA256_fornecido"])
+    print()
     print(f"MD5 fornecido: {item['MD5_fornecido']}")
     print(f"MD5 calculado: {MD5_calculado}")
-    print("SHA256 correto?" , SHA256_calculado == item["SHA256_fornecido"])
     print("MD5 correto?" , MD5_calculado == item["MD5_fornecido"])
     print("-" * 50)
